@@ -7,10 +7,7 @@
   "client": [
     "ClientLevelPotionEventMixin",
     "ExperienceOrbRenderStateMixin",
-    "ExperienceOrbRendererMixin",
-    "LivingEntityRendererHurtMixin",
-    "ItemInHandLayerToolTrailMixin",
-    "FirstPersonToolTrailMixin"
+    "ExperienceOrbRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
