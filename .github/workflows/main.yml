@@ -1,12 +1,12 @@
 yaml
 name: Build and Release Mod
 
-on:
+'on':
   push:
     branches:
       - main
     tags:
-      - "v*"
+      - 'v*'
   workflow_dispatch:
 
 permissions:
@@ -24,12 +24,12 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: "25"
+          java-version: '25'
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "9.7.1"
+          gradle-version: '9.7.1'
 
       - name: Build mod
         run: gradle --no-daemon clean build
@@ -50,6 +50,5 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            build/libs/*.jar
+          files: build/libs/*.jar
           generate_release_notes: true
