@@ -20,7 +20,7 @@ public abstract class ClientLevelPotionEventMixin {
    @Inject(method = "levelEvent", at = @At("HEAD"), cancellable = true)
    private void runParticlesOnly$suppressVanillaPotionBurst(Entity source, int eventId, BlockPos pos, int data, CallbackInfo ci) {
       if (eventId == 2002 || eventId == 2007) {
-         ClientLevel world = (ClientLevel)this;
+         ClientLevel world = (ClientLevel)(Object)this;
          boolean potionImpact = !world.getEntities(
                EntityTypeTest.forClass(AbstractThrownPotion.class),
                new AABB(pos).inflate(2.0),
