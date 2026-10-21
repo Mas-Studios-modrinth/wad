@@ -1,0 +1,44 @@
+{
+  "screen.run_particles_only.title": "A&S Visuals",
+  "screen.run_particles_only.option_value": "%s: %s",
+  "key.category.run_particles_only.general": "A&S Visuals",
+  "key.run_particles_only.open_config": "Abrir menú del mod",
+  "value.run_particles_only.enabled": "ACTIVADO",
+  "value.run_particles_only.disabled": "DESACTIVADO",
+  "option.run_particles_only.sprint_dust": "Polvo al correr",
+  "option.run_particles_only.run_dust_color": "Color del polvo al correr",
+  "option.run_particles_only.run_dust_intensity": "Intensidad del polvo al correr",
+  "option.run_particles_only.landing_dust": "Polvo al aterrizar",
+  "option.run_particles_only.bow_charging": "Carga del arco",
+  "option.run_particles_only.arrow_charge": "Destello de flecha",
+  "option.run_particles_only.critical_hit": "Golpe crítico",
+  "option.run_particles_only.normal_hit": "Golpe normal",
+  "option.run_particles_only.player_hurt_particles": "Partículas de daño del jugador",
+  "option.run_particles_only.player_hurt_effect": "Efecto de daño del jugador",
+  "option.run_particles_only.mob_hurt_effect": "Efecto de daño de mobs",
+  "option.run_particles_only.fire": "Fuego",
+  "option.run_particles_only.healing_rings": "Aros de curación",
+  "option.run_particles_only.splash_potions": "Salpicadura de pociones",
+  "option.run_particles_only.arrow_trail": "Estela azul de flechas",
+  "option.run_particles_only.elytra_trail": "Estela de élitros",
+  "option.run_particles_only.xp_particles": "Partículas de orbes XP A&S",
+  "option.run_particles_only.xp_trail": "Estela de orbes XP A&S",
+  "option.run_particles_only.throw_spin": "Giro al lanzar",
+  "option.run_particles_only.tool_trail": "Estela de herramientas",
+  "value.run_particles_only.run_dust_color.0": "Actions & Stuff",
+  "value.run_particles_only.run_dust_color.1": "Blanco",
+  "value.run_particles_only.run_dust_color.2": "Gris",
+  "value.run_particles_only.run_dust_color.3": "Azul",
+  "value.run_particles_only.run_dust_color.4": "Verde",
+  "value.run_particles_only.run_dust_color.5": "Rojo",
+  "value.run_particles_only.run_dust_intensity.0": "Normal",
+  "value.run_particles_only.run_dust_intensity.1": "Baja",
+  "value.run_particles_only.run_dust_intensity.2": "Alta",
+  "value.run_particles_only.run_dust_intensity.3": "Muy alta"
+  ,"value.run_particles_only.hurt_effect.0": "Rojo"
+  ,"value.run_particles_only.hurt_effect.1": "Blanco"
+  ,"value.run_particles_only.hurt_effect.2": "Desactivado"
+  ,"value.run_particles_only.fire_mode.0": "A&S"
+  ,"value.run_particles_only.fire_mode.1": "Vanilla"
+  ,"value.run_particles_only.fire_mode.2": "Desactivado"
+}

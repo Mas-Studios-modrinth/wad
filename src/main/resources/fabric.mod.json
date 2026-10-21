@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "run_particles_only",
+  "version": "0.1.54+mc26.3",
+  "name": "A&S Visuals",
+  "description": "Configurable Actions & Stuff visual effects, particles and projectile presentation.",
+  "authors": [
+    "Oreville Port"
+  ],
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.orevilleport.runparticlesonly.RunParticlesOnlyClient"
+    ]
+  },
+  "mixins": [
+    "run_particles_only.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

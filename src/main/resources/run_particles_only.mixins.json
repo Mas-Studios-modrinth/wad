@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "net.orevilleport.runparticlesonly.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+  ],
+  "client": [
+    "ClientLevelPotionEventMixin",
+    "ExperienceOrbRenderStateMixin",
+    "ExperienceOrbRendererMixin",
+    "LivingEntityRendererHurtMixin",
+    "ItemInHandLayerToolTrailMixin",
+    "FirstPersonToolTrailMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

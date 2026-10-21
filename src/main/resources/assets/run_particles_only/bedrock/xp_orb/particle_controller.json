@@ -1,0 +1,1 @@
+{"format_version":"1.19.60","animation_controllers":{"controller.animation.oreville_ans.fmvrxi":{"states":{"default":{"particle_effects":[{"effect":"xp"},{"effect":"qokzhq"},{"effect":"doxwba","pre_effect_script":"v.vimpib=Math.clamp(0.1+q.texture_frame_index*0.015,0.1,0.25);"}]}}}}}

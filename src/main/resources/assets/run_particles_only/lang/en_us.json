@@ -1,0 +1,44 @@
+{
+  "screen.run_particles_only.title": "A&S Visuals",
+  "screen.run_particles_only.option_value": "%s: %s",
+  "key.category.run_particles_only.general": "A&S Visuals",
+  "key.run_particles_only.open_config": "Open mod menu",
+  "value.run_particles_only.enabled": "ON",
+  "value.run_particles_only.disabled": "OFF",
+  "option.run_particles_only.sprint_dust": "Sprint dust",
+  "option.run_particles_only.run_dust_color": "Sprint dust color",
+  "option.run_particles_only.run_dust_intensity": "Sprint dust intensity",
+  "option.run_particles_only.landing_dust": "Landing dust",
+  "option.run_particles_only.bow_charging": "Bow charge",
+  "option.run_particles_only.arrow_charge": "Arrow charge sparkle",
+  "option.run_particles_only.critical_hit": "Critical hit",
+  "option.run_particles_only.normal_hit": "Normal hit",
+  "option.run_particles_only.player_hurt_particles": "Player damage particles",
+  "option.run_particles_only.player_hurt_effect": "Player damage effect",
+  "option.run_particles_only.mob_hurt_effect": "Mob damage effect",
+  "option.run_particles_only.fire": "Fire",
+  "option.run_particles_only.healing_rings": "Healing rings",
+  "option.run_particles_only.splash_potions": "Splash potions",
+  "option.run_particles_only.arrow_trail": "Blue arrow trail",
+  "option.run_particles_only.elytra_trail": "Elytra trail",
+  "option.run_particles_only.xp_particles": "A&S XP-orb particles",
+  "option.run_particles_only.xp_trail": "A&S XP-orb trail",
+  "option.run_particles_only.throw_spin": "Throw Spin",
+  "option.run_particles_only.tool_trail": "Tool trail",
+  "value.run_particles_only.run_dust_color.0": "Actions & Stuff",
+  "value.run_particles_only.run_dust_color.1": "White",
+  "value.run_particles_only.run_dust_color.2": "Gray",
+  "value.run_particles_only.run_dust_color.3": "Blue",
+  "value.run_particles_only.run_dust_color.4": "Green",
+  "value.run_particles_only.run_dust_color.5": "Red",
+  "value.run_particles_only.run_dust_intensity.0": "Normal",
+  "value.run_particles_only.run_dust_intensity.1": "Low",
+  "value.run_particles_only.run_dust_intensity.2": "High",
+  "value.run_particles_only.run_dust_intensity.3": "Very high"
+  ,"value.run_particles_only.hurt_effect.0": "Red"
+  ,"value.run_particles_only.hurt_effect.1": "White"
+  ,"value.run_particles_only.hurt_effect.2": "Off"
+  ,"value.run_particles_only.fire_mode.0": "A&S"
+  ,"value.run_particles_only.fire_mode.1": "Vanilla"
+  ,"value.run_particles_only.fire_mode.2": "Off"
+}
