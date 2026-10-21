@@ -104,44 +104,48 @@ public final class RunParticlesOnlyClient implements ClientModInitializer {
    private static double potionSparkleEmitterRemainder;
    private static final Map<Integer, RunParticlesOnlyClient.SplashPotionSnapshot> trackedSplashPotions = new HashMap<>();
 
-   public void onInitializeClient() {
-      RunParticlesConfig.load();
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("run_dust"), RUN_DUST);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("run_dust_medium"), RUN_DUST_MEDIUM);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("landing_dust"), LANDING_DUST);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("landing_roll_ring"), LANDING_ROLL_RING);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("bow_charging"), BOW_CHARGING);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("arrow_charge"), ARROW_CHARGE);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("normal_hit"), NORMAL_HIT);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("player_hurt"), PLAYER_HURT);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("healing_ring"), HEALING_RING);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("potion_sparkle"), POTION_SPARKLE);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("status_effect_sprite"), STATUS_EFFECT_SPRITE);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("splash_spell"), SPLASH_SPELL);
-      Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("arrow_trail"), ARROW_TRAIL);
-      ParticleProviderRegistry.getInstance().register(RUN_DUST, RunDustParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(RUN_DUST_MEDIUM, RunDustMediumParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(LANDING_DUST, LandingDustParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(LANDING_ROLL_RING, LandingRollRingParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(BOW_CHARGING, BowChargingParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(ARROW_CHARGE, ArrowChargeParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(NORMAL_HIT, CriticalHitParticle.WhiteFactory::new);
-      ParticleProviderRegistry.getInstance().register(PLAYER_HURT, PlayerHurtParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(HEALING_RING, HealingRingParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(POTION_SPARKLE, PotionSparkleParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(STATUS_EFFECT_SPRITE, ActionsStuffMobSpellParticle.SourceSpriteFactory::new);
-      ParticleProviderRegistry.getInstance().register(SPLASH_SPELL, SplashSpellParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(ARROW_TRAIL, ArrowTrailParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(ParticleTypes.CRIT, CriticalHitParticle.Factory::new);
-      ParticleProviderRegistry.getInstance().register(ParticleTypes.ENTITY_EFFECT, ActionsStuffMobSpellParticle.Factory::new);
-      ClientTickEvents.END_CLIENT_TICK.register(RunParticlesOnlyClient::tick);
-      LevelRenderEvents.AFTER_TRANSLUCENT_FEATURES.register((AfterTranslucentFeatures)context -> {
-         XpOrbEffects.renderTrails(context);
-         XpBottleEffects.renderTrails(context);
-         ToolTrailEffects.render(context);
-      });
-      AttackEntityCallback.EVENT.register(RunParticlesOnlyClient::onAttackEntity);
-   }
+  public void onInitializeClient() {
+   RunParticlesConfig.load();
+
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("run_dust"), RUN_DUST);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("run_dust_medium"), RUN_DUST_MEDIUM);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("landing_dust"), LANDING_DUST);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("landing_roll_ring"), LANDING_ROLL_RING);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("bow_charging"), BOW_CHARGING);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("arrow_charge"), ARROW_CHARGE);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("normal_hit"), NORMAL_HIT);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("player_hurt"), PLAYER_HURT);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("healing_ring"), HEALING_RING);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("potion_sparkle"), POTION_SPARKLE);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("status_effect_sprite"), STATUS_EFFECT_SPRITE);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("splash_spell"), SPLASH_SPELL);
+   Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("arrow_trail"), ARROW_TRAIL);
+
+   ParticleProviderRegistry.getInstance().register(RUN_DUST, RunDustParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(RUN_DUST_MEDIUM, RunDustMediumParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(LANDING_DUST, LandingDustParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(LANDING_ROLL_RING, LandingRollRingParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(BOW_CHARGING, BowChargingParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(ARROW_CHARGE, ArrowChargeParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(NORMAL_HIT, CriticalHitParticle.WhiteFactory::new);
+   ParticleProviderRegistry.getInstance().register(PLAYER_HURT, PlayerHurtParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(HEALING_RING, HealingRingParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(POTION_SPARKLE, PotionSparkleParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(STATUS_EFFECT_SPRITE, ActionsStuffMobSpellParticle.SourceSpriteFactory::new);
+   ParticleProviderRegistry.getInstance().register(SPLASH_SPELL, SplashSpellParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(ARROW_TRAIL, ArrowTrailParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(ParticleTypes.CRIT, CriticalHitParticle.Factory::new);
+   ParticleProviderRegistry.getInstance().register(ParticleTypes.ENTITY_EFFECT, ActionsStuffMobSpellParticle.Factory::new);
+
+   ClientTickEvents.END_CLIENT_TICK.register(RunParticlesOnlyClient::tick);
+
+   LevelRenderEvents.AFTER_TRANSLUCENT_FEATURES.register((AfterTranslucentFeatures) context -> {
+      XpOrbEffects.renderTrails(context);
+      XpBottleEffects.renderTrails(context);
+   });
+
+   AttackEntityCallback.EVENT.register(RunParticlesOnlyClient::onAttackEntity);
+}
 
    private static void tick(Minecraft client) {
       while (OPEN_CONFIG_KEY.consumeClick()) {
@@ -179,7 +183,6 @@ public final class RunParticlesOnlyClient implements ClientModInitializer {
          tickElytraTrail(player, velocity);
          XpOrbEffects.tick(client.level, player);
          XpBottleEffects.tick(client.level, player);
-         ToolTrailEffects.tick(player);
       } else {
          resetTransientState();
       }
@@ -317,7 +320,6 @@ public final class RunParticlesOnlyClient implements ClientModInitializer {
       trackedSplashPotions.clear();
       XpOrbEffects.clear();
       XpBottleEffects.clear();
-      ToolTrailEffects.clear();
    }
 
    private static InteractionResult onAttackEntity(Player player, Level world, InteractionHand hand, Entity target, EntityHitResult hitResult) {
